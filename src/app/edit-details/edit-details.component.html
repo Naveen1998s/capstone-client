@@ -1,0 +1,8 @@
+
+<form #editForm="ngForm" (ngSubmit)="getUser(editForm)">
+    <label for="fname">Patient Name:</label>
+    <input type="text"   id="fname" #fname="ngModel" [(ngModel)]="SelectedUser.fname" name="fname" ><br>
+    <label for="email">Email:       </label>
+    <input type="text"  id="email" name="email" #email="ngModel" [(ngModel)]="SelectedUser.email" >
+    <button  class="btn btn-info" >edit</button>
+</form>

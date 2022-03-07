@@ -1,0 +1,48 @@
+<section class="vh-80">
+  <div class="container py-5 h-80">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="mb-1">
+            <label for="exampleInputPassword1" class="form-label"></label>
+            <input type="text" class="form-control" name="fname" id="exampleInputusername" aria-describedby="usernameHelp" formControlName="fname" placeholder="Enter your FirstName">
+            <span style="color: red;" *ngIf="fname.invalid && fname.touched"><p>Enter valid FirstName</p></span>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputPassword1" class="form-label"></label>
+            <input type="text" class="form-control" name="lname" id="exampleInputusername" aria-describedby="usernameHelp" formControlName="lname" placeholder="Enter your LastName">
+            <span style="color: red;" *ngIf="lname.invalid && lname.touched"><p>Enter valid Last Name</p></span>
+          </div>
+          <!-- Email input -->
+          <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"></label>
+          <input type="email" class="form-control" name="email" id="exampleInputusername" aria-describedby="usernameHelp" formControlName="email" placeholder="Enter your Email">
+          <span style="color: red;" *ngIf="email.invalid && email.touched"><p>Enter valid Email</p></span>
+        </div>
+          <!-- Password input -->
+          <!-- <div class="d-flex justify-content"> -->
+          <div class="mb-3 d-flex justify-content-between">
+            <input [type]="val" class="form-control" name="password" id="exampleInputPassword1" formControlName="password" placeholder="Enter your Password"/>
+            <span style="color: red;" *ngIf ="password.invalid && password.touched">Enter valid password</span>
+            <i [class]="eye" class="eye" (click)="toggle()" aria-hidden="true"></i>
+          </div>
+          
+          <div class="mb-3">
+            
+                <input type="text" class="form-control" id="form3Example" placeholder="Role"
+                    list="list" formControlName="role" name="role" id="role" />
+                <datalist id="list">
+                    <option value="user"></option>
+                    <option value="admin"></option>
+                </datalist>
+            </div>
+            <button type="submit" class="btn btn-lg ">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
