@@ -15,7 +15,7 @@ import { HeamatologyComponent } from './heamatology/heamatology.component';
 import {EnterSampleComponent} from './enter-sample/enter-sample.component';
 import { ThyroidComponent } from './thyroid/thyroid.component';
 import { GlucomtryComponent } from './glucomtry/glucomtry.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { SampleUserComponent } from './sample-user/sample-user.component';
 import { EditDetailsComponent } from './edit-details/edit-details.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -24,6 +24,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 import { RouteguardGuard } from './guard/routeguard.guard';
+import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
+import { SpinnersComponent } from './spinners/spinners.component';
+
 
 
 
@@ -44,7 +47,8 @@ import { RouteguardGuard } from './guard/routeguard.guard';
     SampleUserComponent,
     EditDetailsComponent,
     FilterPipe,
-    ViewdetailsComponent
+    ViewdetailsComponent,
+    SpinnersComponent
     
   ],
   imports: [
@@ -57,7 +61,13 @@ import { RouteguardGuard } from './guard/routeguard.guard';
     Ng2OrderModule,
     NgxPaginationModule
   ],
-  providers: [RouteguardGuard],
+  providers: [
+    RouteguardGuard,
+  {provide:HTTP_INTERCEPTORS,
+  useClass:InterceptorInterceptor,
+  multi:true
+}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

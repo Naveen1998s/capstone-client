@@ -68,3 +68,22 @@ line-height: 20px;
     font-weight: normal;
     color: #f1f1f1;
 }
+.form-control
+    {
+        width: 50%;
+        margin-left: 40px;
+        padding-left: 30px;
+    }
+    
+    #search {
+        margin: 30px;
+        display: inline-block;
+        
+    }
+
+    #search{
+        position: relative;
+        margin-left: 135px;       
+    }
+    
+

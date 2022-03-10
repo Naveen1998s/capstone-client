@@ -10,11 +10,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
+  
   componentName:"admin-login"
   val: any = "password";
   eye: any = "fa fa-eye-slash"
   value: any
   loginForm: FormGroup;
+  isLoading=false;
 
   toggle() {
     if (this.val === "password") {
@@ -50,9 +52,13 @@ export class AdminLoginComponent implements OnInit {
 
   res:any
   login(){
+    this.isLoading = true;
   console.log(this.loginForm.value);
   this.service.logData(this.loginForm.value).subscribe(data=>{
+    
     console.log(this.res=data);
+    this.isLoading = false;
+    
     localStorage.setItem("role", this.res.data.role)
       localStorage.setItem("token", this.res.data.token)
     if(this.res.data.role === 'admin'){
@@ -64,4 +70,5 @@ export class AdminLoginComponent implements OnInit {
     
   })
 
-}}
+}
+}

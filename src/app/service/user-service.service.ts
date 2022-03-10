@@ -29,5 +29,7 @@ export class UserServiceService {
   fetchSample() {
     return this.http.get<any>("http://localhost:4000/users/editdetails")
   }
-  
+  getToken(){
+    return localStorage.getItem('token')
+  }
   }

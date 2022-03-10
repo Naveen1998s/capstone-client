@@ -1,8 +1,15 @@
+<div class="container col-md-4 col-md-offset-4">
 
-<form #editForm="ngForm" (ngSubmit)="getUser(editForm)">
-    <label for="fname">Patient Name:</label>
-    <input type="text"   id="fname" #fname="ngModel" [(ngModel)]="SelectedUser.fname" name="fname" ><br>
-    <label for="email">Email:       </label>
-    <input type="text"  id="email" name="email" #email="ngModel" [(ngModel)]="SelectedUser.email" >
-    <button  class="btn btn-info" >edit</button>
-</form>
+<form class="form" #editForm="ngForm" (ngSubmit)="getUser(editForm)">
+    <div  id="a" class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Patient Name</label>
+      <input type="text" id="fname" id="b" #fname="ngModel" [(ngModel)]="SelectedUser.fname" name="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      
+    </div>
+    <div id="a" class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Email</label>
+      <input type="email" id="email"  id="b" name="email" #email="ngModel" [(ngModel)]="SelectedUser.email" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="submit ">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+.form{
+    width: 400px;
+    margin-left: 10px;
+    margin-top:25px;
+    border: 1px solid black;
+    height: 255px;
+    border:1px solid black;
+    border-radius: 5px;
+    background-color: #9fa4c4;
+    background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%);
+}
+.submit{
+    color: #f3eaea;
+    /* background-color:rgb(11, 189, 85); */
+    background-color: #0928f1;
+    background-image: linear-gradient(315deg, #1430e6 0%, #9e768f 74%);
+
+    width: 100px;
+    border-radius: 5px;
+    margin-top:  40px;
+    margin-right: -40px;
+    border-color: black;
+    margin-left: 150px;
+}
+#a{
+    margin-left: 10px;
+}
+#b{
+    width: 50%;
+}
+.h{
+    margin-left:200px ;
+}
+#c{
+    width: 50%;
+}
